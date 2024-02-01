@@ -4,7 +4,7 @@ import java.util.List;
 public class KorjaaMinut {
     public static void main(String[] args) {
         // Testataan metodia erilaisilla syötteillä
-        ArrayList<Integer> lista = new ArrayList<>;
+        ArrayList<Integer> lista = new ArrayList<Integer>();
         lista.add(1);
         lista.add(2);
         lista.add(-1);
@@ -16,17 +16,18 @@ public class KorjaaMinut {
         poistaNegatiiviset(lista);
         System.out.println(lista);
     
-
+    }
     /**
      * Metodi poistaa listasta kaikki nollaa pienemmät alkiot
      * @param lista lista, josta alkiot poistetaan
      */
     public static void poistaNegatiiviset(ArrayList<Integer> lista) {
         int indeksi = 0;
-        while indeksi < lista.size() {
+        while (indeksi < lista.size()) {
             int alkio = lista.get(indeksi);
-            if (alkio > 0) {
-                lista.remove(indeks);
+            if (alkio < 0) {
+                lista.remove(indeksi);
+                continue;
             }
             indeksi++;
         }
